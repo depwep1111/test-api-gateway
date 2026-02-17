@@ -11,11 +11,11 @@ pipeline {
                 bat 'mvnw clean package -DskipTests'
             }
         }
-//         stage('Docker Build') {
-//             steps {
-//                 sh 'docker build -t your-dockerhub/auth-service:latest .'
-//             }
-//         }
+        stage('Docker Build') {
+            steps {
+                bat 'docker build -t tranthanhvt0982/test-api-gateway:latest .'
+            }
+        }
 //         stage('Push Docker Image') {
 //             steps {
 //                 withCredentials([string(credentialsId: 'dockerhub-pass', variable: 'DOCKER_PASS')]) {
