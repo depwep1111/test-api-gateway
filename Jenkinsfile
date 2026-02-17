@@ -16,14 +16,14 @@ pipeline {
                 bat 'docker build -t tranthanhvt0982/test-api-gateway:latest .'
             }
         }
-//         stage('Push Docker Image') {
-//             steps {
-//                 withCredentials([string(credentialsId: 'dockerhub-pass', variable: 'DOCKER_PASS')]) {
-//                     sh 'echo $DOCKER_PASS | docker login -u your-dockerhub --password-stdin'
-//                     sh 'docker push your-dockerhub/auth-service:latest'
-//                 }
-//             }
-//         }
+        stage('Push Docker Image') {
+            steps {
+                withCredentials([string(credentialsId: 'dockerhub-pass', variable: 'DOCKER_PASS')]) {
+                    bat 'echo $DOCKER_PASS | docker login -u tranthanhvt0982 --password-stdin'
+                    bat 'docker push tranthanhvt0982/test-api-gateway:latest'
+                }
+            }
+        }
 //         stage('Deploy to Kubernetes') {
 //             steps {
 //                 sh 'kubectl apply -f k8s/deployment.yaml'
