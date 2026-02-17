@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/depwep1111/test-api-gateway.git'
+                git branch: 'main', url: 'https://github.com/depwep1111/test-api-gateway.git'
             }
         }
         stage('Build') {
