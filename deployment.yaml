@@ -13,7 +13,7 @@ spec:
         app: api-gateway
     spec:
       containers:
-        - name: test-api-gateway
+        - name: api-gateway
           image: tranthanhvt0982/test-api-gateway:latest
           ports:
             - containerPort: 8081
