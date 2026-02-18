@@ -19,7 +19,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 withCredentials([string(credentialsId: 'dockerhub-pass', variable: 'DOCKER_PASS')]) {
-                    bat 'echo %DOCKER_PASS% | docker login -u eks-admin --password-stdin'
+                    bat 'echo %DOCKER_PASS% | docker login -u tranthanhvt0982 --password-stdin'
                     bat 'docker push tranthanhvt0982/test-api-gateway:latest'
                 }
             }
