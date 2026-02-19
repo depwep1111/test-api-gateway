@@ -17,6 +17,19 @@ spec:
           image: tranthanhvt0982/test-api-gateway:latest
           ports:
             - containerPort: 8080
+            livenessProbe:
+              httpGet:
+                path: /actuator/health/liveness
+                port: 8081
+              initialDelaySeconds: 30
+              periodSeconds: 10
+            readinessProbe:
+              httpGet:
+                path: /actuator/health/readiness
+                port: 8081
+              initialDelaySeconds: 30
+              periodSeconds: 10
+
 ---
 apiVersion: v1
 kind: Service
