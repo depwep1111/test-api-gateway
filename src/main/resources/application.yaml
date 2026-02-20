@@ -15,9 +15,15 @@ spring:
 management:
   endpoints:
     web:
+      base-path: /
       exposure:
-        include: health,info,metrics,prometheus
+        include:
+          - info
+          - health
+      path-mapping:
+        health: /healthcheck
   endpoint:
     health:
-      show-details: always
-
+      show-details: ALWAYS
+  server:
+    port: 8081 #${MANAGEMENT_PORT:9181}
