@@ -20,7 +20,6 @@ spec:
               name: http
             - containerPort: 8081
               name: http-admin
-          enableDefaultLivenessProbe: false
           livenessProbe:
             httpGet:
               path: "/healthcheck"
