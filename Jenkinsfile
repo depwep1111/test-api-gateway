@@ -13,14 +13,14 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                bat 'docker build -t tranthanhvt0982/test-api-gateway:latest .'
+                bat 'docker build -t tranthanhvt0982/test-api-gateway:0.1 .'
             }
         }
         stage('Push Docker Image') {
             steps {
                 withCredentials([string(credentialsId: 'dockerhub-pass', variable: 'DOCKER_PASS')]) {
                     bat 'echo %DOCKER_PASS% | docker login -u tranthanhvt0982 --password-stdin'
-                    bat 'docker push tranthanhvt0982/test-api-gateway:latest'
+                    bat 'docker push tranthanhvt0982/test-api-gateway:0.1'
                 }
             }
         }

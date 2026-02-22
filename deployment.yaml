@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api-gateway
-          image: tranthanhvt0982/test-api-gateway:latest
+          image: tranthanhvt0982/test-api-gateway:0.1
           ports:
             - containerPort: 8080
               name: http
